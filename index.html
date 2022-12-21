@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ja">
+ <head>
+ <meta charset="utf-8">
+ <title>新年2023</title>
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@600;900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;700;900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+  @import url('https://fonts.cdnfonts.com/css/credit-card');
+  </style>
+  <link rel="stylesheet" href="style.css" type="text/css">
+
+  
+ <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  import { getFirestore , collection, doc, getDoc } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyDzstE53M6OkBi7p9LSe7u2tp7lDXw1Pc8",
+    authDomain: "newyear2023-2cb0a.firebaseapp.com",
+    projectId: "newyear2023-2cb0a",
+    storageBucket: "newyear2023-2cb0a.appspot.com",
+    messagingSenderId: "230233730605",
+    appId: "1:230233730605:web:94c2f4eae9dfa22dacd2a4"
+  };
+
+  
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  // Initialize Firebase and Get Database
+  const docRef = doc(db, "data", "2023");
+  const docSnap = await getDoc(docRef);
+
+  //Show data on page
+  if (docSnap.exists()) {
+  var sample = document.getElementById('Number');
+  sample.insertAdjacentHTML('beforeend', docSnap.data().Number);
+  const gift = document.querySelector(".gift");
+  gift.className += '-show';
+  } else {
+  var sample = document.getElementById('Number');
+  sample.insertAdjacentHTML('beforeend', '?????');
+  }
+  </script>
+
+ </head>
+ 
+ <body onContextmenu="return false;">
+  <div id="Database">
+    <div class="title_wrapper">
+        <div class = "title"><h1>Happy New Year!!!</h1><h2>今年もよろしくお願いいたします</h2></div>
+        
+    </div>
+
+    <div class="gift_wrapper">
+      <h1>おとしだま</h1>
+      <div class="gift">
+        <div class="card">
+          <div class="thickness"></div>
+          <div class="thickness"></div>
+          <div class="thickness"></div>
+            <div class = "flex">
+              <div class = "credit">¥1000</div>
+              <img class = "logo" src="amazon_logo.png">
+            </div>
+            <div id = "Number"></div>
+            <div class="msg">先着1名お年玉</div>
+        </div>
+      </div>
+
+      <div class="description">
+      <p>みなさん2022年あっという間でしたね、来年も良いお年になることをお先にお祈りしておきます。</p>
+      <p>さて、今年の新年サイトはせっかくなのでお年玉要素を加えておきました。</p>
+      <h2>アマギフ1000円プレゼント！！<br>(先着1名)</h2>
+      <p>2023年になると、このページにアマギフの番号が表示されます(予定)。</p>
+      <p>一番最初にアマゾンのサイトに入力し終えて、残高に反映された人がお年玉ゲット！の実力型のお年玉抽選会です</p>
+      <p>番号表示はページ読み込み時に行うので、2023年になる瞬間に再読み込み連打してもらうと多分出てきます</p>
+      <p>なお、プログラミングが適当なので2023年ぴったりにちゃんと出てきてくれる保証はありません。あしからず。</p>
+      </div>
+      <div class="QA">
+          <h3>Q&A</h3>
+          <p class="Q">ページ内のどこかに番号が書いてあって、詳しい人が番号をもらっていったりしない？</p>
+          <p class="A">サイト内には番号は保存していません。問題ありません。</p>
+          <p class="Q">じゃあどうやって番号を保存しているの？</p>
+          <p class="A">Googleのデータベースに番号を保存して、そこからデータを受け取って表示します</p>
+          <p class="Q">プログラム詳しい人がデータベースの問い合わせコードを自作して、勝手に奪っていったりはしないの？</p>
+          <p class="A">データベースは2023年になってから返事を返すように設定したので、問題ありません。</p>
+          <p class="Q">データベースの設定が書き換わる可能性は？</p>
+          <p class="A">私のGoogleパスワードを知っているかGoogleのサーバーのセキュリティを破れるなら可能ですが、セキュリティに対して金額が少額すぎるので多分現実的にやらないでしょう。</p>
+          <p class="Q">データベースからのデータが暗号化されていなくて途中で傍受されて先に使われる可能性は？</p>
+          <p class="A"> Googleとの通信が暗号化されていない可能性はたぶんないと思いますが、心配性ならVPNでも使ってください</p>
+          <p class="Q">何千人も来たら鯖落ちとかデータベースの制限とかないの？</p>
+          <p class="A">データベースの問い合わせ制限数は5万くらい、同時接続数は100だったので100人来なければ多分大丈夫です。</p>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    const container = document.querySelector(".gift_wrapper");
+    const card = document.querySelector(".card");
+    const number = document.querySelector("#Number");
+    window.addEventListener("load",function(){
+    container.addEventListener("mousemove", (rotate) => {
+      //let clientRect = targetElement.getBoundingClientRect() ;
+      var clientRect = container.getBoundingClientRect() ;
+
+      let x = getTransformValue(event.clientX,window.innerWidth,40); 
+      let y = getTransformValue(event.clientY,window.innerHeight,40);
+
+      let xx = -(rotate.pageX / (clientRect.left - clientRect.right)) * 100;
+      let yy = (rotate.pageY-clientRect.bottom - clientRect.top/2) / (clientRect.bottom - clientRect.top) * 100;
+
+      let text_shadow_x =  getTransformValue(event.clientX,window.innerWidth,10);
+      let text_shadow_y = getTransformValue(event.clientY,window.innerHeight,10);
+
+      card.style.transform = "rotateY(" + x + "deg) rotateX(" + (y) + "deg)" + " translate(" + (y) +"px ," + (x) + "px)";
+      number.style.textShadow = (-text_shadow_x+2) + "px " + ((text_shadow_y/1)+2) + "px 4px rgba(0, 0, 0, .2), " + (-text_shadow_x-1) + "px " + ((text_shadow_y/1)-3) + "px 4px rgba(255, 255, 255, .4)";
+      card.style.backgroundImage = "radial-gradient(at " + (100-xx) + "% "+ (2*yy) + "%, rgba(255,255,255,1) 10%, rgba(255,255,255,0) 40% , rgba(10,10,0,0.25) 70%), linear-gradient(130deg, rgba(214,214,214,0.2) 36%, rgba(229,229,229,0) 36%),linear-gradient(60deg, rgba(214,214,214,0.2) 26%, rgba(229,229,229,0) 26%),linear-gradient(59deg, rgba(250,250,240,1) 0%, rgba(220,220,220,1) 100%)";
+    });
+  });
+  
+  function getTransformValue(v1,v2,value){
+    return ((v1/v2*value-value/2)*1).toFixed(1);   
+  }
+</script>
+
+ </body>
+</html>

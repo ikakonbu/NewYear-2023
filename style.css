@@ -1,0 +1,281 @@
+.title_wrapper {
+    width: 100%;
+    height: max(60vw, 60vh);
+    text-align: center;
+    vertical-align: middle;
+    color: #FFFFFF;
+    background-image: url("large.webp");
+    
+    background-size: cover;
+}
+
+.title_wrapper div{
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(5px);
+    background: linear-gradient(59deg, rgba(222,228,223,0.4) 0%, rgba(122,198,213,0.3) 100%);
+    vertical-align: middle;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+h1{
+    padding: 0;
+    margin: 0;
+    color: #FFFFFF; 
+    font-size: min(6.5vw,65px);
+    font-weight: 700;
+    font-family: 'Poppins';
+    position: relative;
+}
+
+h1::after{
+    content: '';
+    border-radius: 10px;
+    width: 40vw;
+    height: 5px;
+    display: inline-block;
+    background-color: rgba(231, 252, 248, 0.5);
+    position: absolute;
+    bottom: -5px;
+    left: calc(50% - 20vw);
+    transition: 0.5s;
+    font-weight: 800;
+}
+
+
+h2{
+    padding: 0;
+    margin: 30px 0 0;
+    background: #FFFFFF;
+    background:  linear-gradient(59deg, rgba(245,255,247,1) 0%, rgba(241,253,255,1) 100%);
+    /*background: -webkit-linear-gradient(#eee, #333);*/
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: min(5vw,36px);
+    font-family: 'Zen Old Mincho';
+    font-weight: 900 !important;
+    transition: 0s;
+    font-weight: 800;
+}
+
+h1:hover::after{
+    transition: 1s;
+    width: 0vw;
+    left: calc(50% - 0vw);
+}
+
+.gift_wrapper{
+    text-align: center;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    background: linear-gradient(145deg, #4684c1, #343174);
+}
+
+.gift-show{
+    padding-left: min(80px, max(15vw, 10px));
+    padding-right: min(80px, max(15vw, 10px));
+    display: block !important;
+    perspective: 800px;
+    animation: shows 1s ease-in-out;
+}
+
+.gift{
+    display: none;
+    transition: 1s;
+    transform: scale(0);
+}
+
+.card{
+    margin: 80px auto;
+    max-width: min(90vw,500px);
+    border-radius: 12px;
+    background-image: 
+    radial-gradient(at 40% 10%, rgb(255, 255, 255) 10%, rgba(255, 255, 255, 0) 40%, rgba(10, 10, 0, 0.25) 70%),
+    linear-gradient(130deg, rgba(214,214,214,0.2) 36%, rgba(229,229,229,0) 36%),
+    linear-gradient(60deg, rgba(214,214,214,0.2) 26%, rgba(229,229,229,0) 26%),
+    linear-gradient(59deg, rgba(255,255,243,1) 0%, rgba(229,229,229,1) 100%);
+    box-shadow: -2px -1px 34px -4px rgba(228, 228, 200, 0.56);
+    transform-style: preserve-3d;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.thickness{
+    width: 101%;
+    height: 101%;
+    border-radius: 12px;
+    background: #c0c0c0;
+    position: absolute;
+    left: -0.5%;
+    top: -0.5%;
+    transform: translateZ(-4px);
+}
+.thickness:nth-child(2) {
+    transform: translateZ(-9px);
+}
+.thickness:nth-child(3) {
+transform: translateZ(-12px);
+}
+
+.flex{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px 0;
+}
+
+.credit{
+    z-index: 20;
+    font-size: min(4vw,22px);
+    font-weight: 700;
+}
+
+.logo{
+    margin-top: 10px;
+    z-index: 20;
+    width: min(15vw, 80px);
+    height: min(4.5vw, 26px);
+}
+
+#Number{
+    margin: min(10vw,65px) 0 min(10vw,65px);
+    font-size: calc(min(4vw, 34px));
+    font-weight: 500;
+    transform: translateZ(0px);
+    z-index: 30;
+    text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.4);
+    -webkit-text-stroke: 1px #000;
+    font-family:'Credit Card';  /*'Architects Daughter';*/
+}
+
+.msg{
+    margin: 0vw 0 4vw;
+    font-size: min(2vw, 24px);
+    padding-bottom: min(3vw,30px);
+}
+
+.description{
+    text-align: left;
+    padding-left: min(80px, max(15vw, 10px));
+    padding-right: min(80px, max(15vw, 10px));
+}
+
+.description h2{
+    padding: 0;
+    margin: 0;
+    font-size: min(4.5vw,40px);
+    text-align: center;
+}
+
+.QA{
+    margin-left: min(80px, max(15vw, 10px));
+    margin-right: min(80px, max(15vw, 10px));
+    text-align: left;
+    background-color:rgba(255, 255, 255,0.1);
+    padding: 0px 30px 20px;
+    border-radius: 2vh;
+}
+
+.QA h3{
+        color: #FFF;
+        font-size: min(5vw,32px);
+        padding-top: 2vh;
+        border-bottom: 1px solid #fff;
+}
+.QA .Q::before{
+    content: "Q: ";
+    font-family: 'Zen Old Mincho';
+    padding-right: 1vw;
+    color: #FFF;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.QA .Q{
+    color: #FFF;
+    padding-bottom: 0;
+    margin-bottom: 5px;
+}
+
+.QA .A{
+    padding-top: 0;
+    margin-top: 0;
+    margin-bottom: 4vh;
+}
+
+p {
+    color: #C0C0C0;
+}
+
+
+body{
+    font-family: "Noto Sans JP", sans-serif;
+    margin : 0;
+}
+
+/*携帯端末向けCSS*/
+@media screen and (max-width:1200px) and (hover: none) and (pointer: coarse) {
+
+    .QA{
+        margin: auto 0 !important;
+        border-radius: 0;
+    }
+
+    .credit{
+        font-size: 40px;
+        margin-left: 20px;
+    }
+    .logo{
+        width: 150px;
+        height: 45px;
+    }
+    #Number{
+        font-weight: bold;
+        font-size: 50px;
+        margin: 100px 0 100px;
+        -webkit-text-stroke: none;
+        text-shadow: none ;
+    }
+
+    .card{
+        margin: 80px 0;
+        max-width: 80vw;
+        border-radius: 20px;
+    }
+
+    .thickness{
+        border-radius: 20px !important;
+    }
+
+    /*iOSではレンダリング仕様が異なるため更に手を加える*/
+    _::-webkit-full-page-media, _:future, :root #Number{
+        font-weight: 500;
+    }
+    _::-webkit-full-page-media, _:future, :root body{
+        font-size: 35px !important;
+    }
+}
+
+@media screen and (max-width:520px) {
+
+    .QA{
+        margin: auto 0 ;
+        border-radius: 0;
+    }
+
+}
+
+@keyframes shows {
+    0%{
+       transform: scale(0);
+      }
+   100%{
+       transform: scale(1);
+      }
+   }
