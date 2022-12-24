@@ -1,27 +1,16 @@
 <!DOCTYPE html>
 <html lang="ja">
- <head>
- <meta charset="utf-8">
- <title>新年2023</title>
- <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@600;900&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;700;900&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
-  @import url('https://fonts.cdnfonts.com/css/credit-card');
-  </style>
+<head>
+  <meta charset="utf-8">
+  <title>新年2023</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="style.css" type="text/css">
 
-  
  <script type="module">
-  // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
-  // TODO: Add SDKs for Firebase products that you want to use
   import { getFirestore , collection, doc, getDoc } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
 
-  // Your web app's Firebase configuration
   const firebaseConfig = {
     apiKey: "AIzaSyDzstE53M6OkBi7p9LSe7u2tp7lDXw1Pc8",
     authDomain: "newyear2023-2cb0a.firebaseapp.com",
@@ -31,34 +20,80 @@
     appId: "1:230233730605:web:94c2f4eae9dfa22dacd2a4"
   };
 
-  
-  // Initialize Firebase
+
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
-
-  // Initialize Firebase and Get Database
   const docRef = doc(db, "data", "2023");
   const docSnap = await getDoc(docRef);
 
+  /*
   //Show data on page
   if (docSnap.exists()) {
-  var sample = document.getElementById('Number');
-  sample.insertAdjacentHTML('beforeend', docSnap.data().Number);
-  const gift = document.querySelector(".gift");
-  gift.className += '-show';
+    var sample = document.getElementById('Number');
+    var disc = document.querySelector(".description");
+    var main = document.querySelector(".main_back");
+    var talk = document.querySelector(".news");
+    sample.insertAdjacentHTML('beforeend', docSnap.data().Number);
+    const gift = document.querySelector(".gift");
+    gift.className += '-show';
+    disc.style.display = "none";
+    talk.style.display = "none";
+    main.style.display = "block";
   } else {
-  var sample = document.getElementById('Number');
-  sample.insertAdjacentHTML('beforeend', '?????');
-  }
+    var sample = document.getElementById('Number');
+    sample.insertAdjacentHTML('beforeend', '?????');
+  }*/
   </script>
 
  </head>
  
  <body onContextmenu="return false;">
   <div id="Database">
-    <div class="title_wrapper">
-        <div class = "title"><h1>Happy New Year!!!</h1><h2>今年もよろしくお願いいたします</h2></div>
-        
+    <div class="main_back">
+      <div class="title_wrapper">
+          <div class = "title"><h1>Happy New Year!!!</h1><h2>今年もよろしくお願いいたします</h2></div>
+          
+      </div>
+
+      <div class="aisatu_wrapper">
+        <div class="aisatu">
+          <h2>謹賀新年</h2>
+          <div class = "ohanasi">
+            <p>皆様明けましておめでとう御座います</p>
+            <p>今年も大変お世話になりました。</p>
+            <p>国内外で多くの事件が置き、今年は特に物騒でしたね。</p>
+            <p>幸い私は比較的穏やかな一年でした。</p>
+            <p>二〇二三年は個人的に忙しくなりそうですが、<br>よろしくお願いいたします</p>
+            <div class="name"><p>石田 駿弥</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class = "news">
+        <div class="countdown">
+          <div class="blur">
+            <h2>今年もあと</h2>
+            <p id="lefttime">10時間10分22秒</p>
+          </div>
+          <div id="video-area">
+          <video id="video" poster="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-3-1/img/movie.jpg" webkit-playsinline playsinline muted autoplay loop>
+            <source src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-3-1/video/movie.mp4" type="video/mp4">
+          </video>
+          </div>
+        </div>
+
+        <div class = "talk_wrapper">
+          <div class="talk">
+          <h2>ごあいさつ</h2>
+          <p>みなさん2022年あっという間でしたね、来年も良いお年になることをお先にお祈りしておきます。</p>
+          <p>今年も年賀状を出すのがめんどくさいので、あけおめサイトをみんなに配る方式で新年の挨拶を済ませようと思います。</p>
+          <p>むしろこっちのほうが手間かかってるから、ホントは年賀状のほうが作業量は少ないのですが、サイトなら12/31ギリギリまで開発しててもいいのでギリギリで動く僕にはぴったりです。</p>
+          <!-- <p>一応新年になるとこのサイトの見た目が変わる感じにしておくつもりですが、それまで殺風景なのはなんかアレなので、今年のニュースでもまとめておくことにしました</p>
+          <p>適度に置いておくので見たり見なかったりしてください</p> -->
+          <p>あと今年はお年玉あります。下の方にスクロールしてざっとルールとか確認してもらえると嬉しいです</p>
+          </div>
+        </div>
     </div>
 
     <div class="gift_wrapper">
@@ -75,10 +110,11 @@
             <div id = "Number"></div>
             <div class="msg">先着1名お年玉</div>
         </div>
+        <h2>オラァ！最速で打ち込め！</h2>
+        <img src="letgo.jpg">
       </div>
 
       <div class="description">
-      <p>みなさん2022年あっという間でしたね、来年も良いお年になることをお先にお祈りしておきます。</p>
       <p>さて、今年の新年サイトはせっかくなのでお年玉要素を加えておきました。</p>
       <h2>アマギフ1000円プレゼント！！<br>(先着1名)</h2>
       <p>2023年になると、このページにアマギフの番号が表示されます(予定)。</p>
@@ -88,50 +124,26 @@
       </div>
       <div class="QA">
           <h3>Q&A</h3>
-          <p class="Q">ページ内のどこかに番号が書いてあって、詳しい人が番号をもらっていったりしない？</p>
+          <p class="Q">PCとスマホ、どちらが有利？</p>
+          <p class="A">極端に有利不利が発生しないようwindows,Android,iOSそれぞれの表示を確認しつつ対策してますが、ページレイアウトはスマホ向けに近い感じになってます</p>
+          <p class="Q">ページ内のどこかに番号が書いてあって、詳しい人が解析して奪われない？</p>
           <p class="A">サイト内には番号は保存していません。問題ありません。</p>
           <p class="Q">じゃあどうやって番号を保存しているの？</p>
           <p class="A">Googleのデータベースに番号を保存して、そこからデータを受け取って表示します</p>
           <p class="Q">プログラム詳しい人がデータベースの問い合わせコードを自作して、勝手に奪っていったりはしないの？</p>
           <p class="A">データベースは2023年になってから返事を返すように設定したので、問題ありません。</p>
           <p class="Q">データベースの設定が書き換わる可能性は？</p>
-          <p class="A">私のGoogleパスワードを知っているかGoogleのサーバーのセキュリティを破れるなら可能ですが、セキュリティに対して金額が少額すぎるので多分現実的にやらないでしょう。</p>
-          <p class="Q">データベースからのデータが暗号化されていなくて途中で傍受されて先に使われる可能性は？</p>
+          <p class="A">Googleのサーバーのセキュリティを破れるなら可能ですが、セキュリティに対して金額が少額すぎるので多分現実的にやらないでしょう。</p>
+          <p class="Q">データベースとの通信が暗号化されていなくて途中で傍受されて先に使われる可能性は？</p>
           <p class="A"> Googleとの通信が暗号化されていない可能性はたぶんないと思いますが、心配性ならVPNでも使ってください</p>
           <p class="Q">何千人も来たら鯖落ちとかデータベースの制限とかないの？</p>
           <p class="A">データベースの問い合わせ制限数は5万くらい、同時接続数は100だったので100人来なければ多分大丈夫です。</p>
+          <p class="dron">表示されたカード番号はコピペ不可、カメラからの文字読み取り困難になってます。つまりズルしても意味ねーぞ</p>
       </div>
     </div>
   </div>
 
-  <script type="text/javascript">
-    const container = document.querySelector(".gift_wrapper");
-    const card = document.querySelector(".card");
-    const number = document.querySelector("#Number");
-    window.addEventListener("load",function(){
-    container.addEventListener("mousemove", (rotate) => {
-      //let clientRect = targetElement.getBoundingClientRect() ;
-      var clientRect = container.getBoundingClientRect() ;
-
-      let x = getTransformValue(event.clientX,window.innerWidth,40); 
-      let y = getTransformValue(event.clientY,window.innerHeight,40);
-
-      let xx = -(rotate.pageX / (clientRect.left - clientRect.right)) * 100;
-      let yy = (rotate.pageY-clientRect.bottom - clientRect.top/2) / (clientRect.bottom - clientRect.top) * 100;
-
-      let text_shadow_x =  getTransformValue(event.clientX,window.innerWidth,10);
-      let text_shadow_y = getTransformValue(event.clientY,window.innerHeight,10);
-
-      card.style.transform = "rotateY(" + x + "deg) rotateX(" + (y) + "deg)" + " translate(" + (y) +"px ," + (x) + "px)";
-      number.style.textShadow = (-text_shadow_x+2) + "px " + ((text_shadow_y/1)+2) + "px 4px rgba(0, 0, 0, .2), " + (-text_shadow_x-1) + "px " + ((text_shadow_y/1)-3) + "px 4px rgba(255, 255, 255, .4)";
-      card.style.backgroundImage = "radial-gradient(at " + (100-xx) + "% "+ (2*yy) + "%, rgba(255,255,255,1) 10%, rgba(255,255,255,0) 40% , rgba(10,10,0,0.25) 70%), linear-gradient(130deg, rgba(214,214,214,0.2) 36%, rgba(229,229,229,0) 36%),linear-gradient(60deg, rgba(214,214,214,0.2) 26%, rgba(229,229,229,0) 26%),linear-gradient(59deg, rgba(250,250,240,1) 0%, rgba(220,220,220,1) 100%)";
-    });
-  });
-  
-  function getTransformValue(v1,v2,value){
-    return ((v1/v2*value-value/2)*1).toFixed(1);   
-  }
-</script>
+  <script src="main.js"></script>
 
  </body>
 </html>
