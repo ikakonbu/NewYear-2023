@@ -26,7 +26,7 @@
   const docRef = doc(db, "data", "2023");
   const docSnap = await getDoc(docRef);
 
-  /*
+  
   //Show data on page
   if (docSnap.exists()) {
     var sample = document.getElementById('Number');
@@ -42,17 +42,17 @@
   } else {
     var sample = document.getElementById('Number');
     sample.insertAdjacentHTML('beforeend', '?????');
-  }*/
+  }
   </script>
 
  </head>
  
  <body onContextmenu="return false;">
+  <div class="preload"><div class="spinner"></div></div>
   <div id="Database">
     <div class="main_back">
       <div class="title_wrapper">
           <div class = "title"><h1>Happy New Year!!!</h1><h2>今年もよろしくお願いいたします</h2></div>
-          
       </div>
 
       <div class="aisatu_wrapper">
@@ -73,7 +73,8 @@
     <div class = "news">
         <div class="countdown">
           <div class="blur">
-            <h2>今年もあと</h2>
+            <h2>2022年</h2>
+            <h2>残り時間</h2>
             <p id="lefttime">10時間10分22秒</p>
           </div>
           <div id="video-area">
@@ -89,9 +90,121 @@
           <p>みなさん2022年あっという間でしたね、来年も良いお年になることをお先にお祈りしておきます。</p>
           <p>今年も年賀状を出すのがめんどくさいので、あけおめサイトをみんなに配る方式で新年の挨拶を済ませようと思います。</p>
           <p>むしろこっちのほうが手間かかってるから、ホントは年賀状のほうが作業量は少ないのですが、サイトなら12/31ギリギリまで開発しててもいいのでギリギリで動く僕にはぴったりです。</p>
-          <!-- <p>一応新年になるとこのサイトの見た目が変わる感じにしておくつもりですが、それまで殺風景なのはなんかアレなので、今年のニュースでもまとめておくことにしました</p>
-          <p>適度に置いておくので見たり見なかったりしてください</p> -->
+           <p>一応新年になるとこのサイトの見た目が変わる感じにしておくつもりですが、それまで殺風景なのはなんかアレなので、今年のニュースでもまとめておくことにしました</p>
+          <p>適度に置いておくので見たり見なかったりしてください</p> 
           <p>あと今年はお年玉あります。下の方にスクロールしてざっとルールとか確認してもらえると嬉しいです</p>
+          </div>
+        </div>
+
+        <div class="news_main">
+          <h1>ことしのできごと</h1>
+          <div class="month">
+            <h2>1月</h2>
+            <ul>
+              <li>マクドナルドポテト不足</li>
+              <li>ガソリン価格,13年ぶりの高水準</li>
+              <li>トンガで海底火山噴火</li>
+            </ul>
+            <img src="news/1.jpg">
+          </div>
+          <div class="month">
+            <h2>2月</h2>
+            <ul>
+              <li>Nintendo Switch出荷台数１億台</li>
+              <li>ウマ娘リリース１周年</li>
+              <li>ウクライナに軍事侵攻開始</li>
+            </ul>
+            <img src="news/2.jpg">
+          </div>
+          <div class="month">
+            <h2>3月</h2>
+            <ul>
+              <li>５年ぶりに俺がスマホ買い替え</li>
+              <li>ウィル・スミス平手打ち</li>
+              <li>電力需給逼迫警報が発令</li>
+            </ul>
+            <img src="news/3.jpg">
+          </div>
+          <div class="month">
+            <h2>4月</h2>
+            <ul>
+              <li>１８歳成人に、改正民法施行</li>
+              <li>知床半島で観光船沈没</li>
+              <li>1ドル131円突破、20年ぶり</li>
+            </ul>
+            <img src="news/4.jpg">
+          </div>
+          <div class="month">
+            <h2>5月</h2>
+            <ul>
+              <li>ゆっくり茶番劇商標登録問題</li>
+              <li>ディーダのちんぽ<br>気持ち良すぎだろ!</li>
+              <li>サポカー限定の免許が新設</li>
+            </ul>
+            <img src="news/5.jpg">
+          </div>
+          <div class="month">
+            <h2>6月</h2>
+            <ul>
+              <li>令和ちゃんご乱心、40℃観測</li>
+              <li>IEサポート終了</li>
+              <li>サロメ嬢　、100万人突破</li>
+            </ul>
+            <img src="news/6.webp">
+          </div>
+          <div class="month">
+            <h2>7月</h2>
+            <ul>
+              <li>桐生市40.4℃</li>
+              <li>安倍元首相、銃撃され死亡</li>
+              <li>KDDI通信障害</li>
+            </ul>
+            <img src="news/7.jpg">
+          </div>
+          <div class="month">
+            <h2>8月</h2>
+            <ul>
+              <li>コミケ100開催</li>
+              <li>アンナミラーズ国内撤退</li>
+              <li>ウクライナ侵攻から半年</li>
+            </ul>
+            <img src="news/8.jpg">
+          </div>
+          <div class="month">
+            <h2>9月</h2>
+            <ul>
+              <li>画像生成AIが話題に</li>
+              <li>スプラトゥーン3発売</li>
+              <li>エリザベス女王国葬</li>
+            </ul>
+            <img src="news/9.webp">
+          </div>
+          <div class="month">
+            <h2>10月</h2>
+            <ul>
+              <li>ゲーミングちんぽ華道部</li>
+              <li>1ドル150円 32年ぶり</li>
+              <li>Apple製品大幅値上げ</li>
+            </ul>
+            <img src="news/10.jpg">
+          </div>
+          <div class="month">
+            <h2>11月</h2>
+            <ul>
+              <li>3年ぶりの対面日中首脳会談</li>
+              <li>皆既月食、天王星食同時開催</li>
+              <li>ポケモン新作、過去最高売上</li>
+            </ul>
+            <img src="news/11.jpg">
+          </div>
+          <div class="month">
+            <h2>12月</h2>
+            <ul>
+              <li>我が家のネット死亡</li>
+              <li>モバイルデータ10GB使用</li>
+              <li>ウマ娘の収益でW杯配信</li>
+            </ul>
+            <img src="news/12.webp">
           </div>
         </div>
     </div>

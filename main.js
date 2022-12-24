@@ -2,11 +2,14 @@ const container = document.querySelector(".gift_wrapper");
 const card = document.querySelector(".card");
 const number = document.querySelector("#Number");
 var time = document.querySelector("#lefttime");
+const preload = document.querySelector(".preload");
 var nowtime = new Date();
 var newyeartime = new Date('2023-01-01 00:00:00');
 var timer = null;
 
 window.addEventListener("load",function(){
+    preload.classList.replace("preload", "loaded");
+
   container.addEventListener("mousemove", (rotate) => {
     //カードを立体っぽくする演出
     var clientRect = container.getBoundingClientRect() ;
@@ -36,6 +39,20 @@ window.addEventListener("load",function(){
     nycard.style.transform = "translateY( min(12vh," + ((window.pageYOffset / 8)-(0.2 * window.innerHeight)) + "px))";
     nycard.style.transform =  "scale(min(" + Math.sqrt(Math.sqrt((window.pageYOffset / 2) / (0.42 * window.innerHeight))) + ",1))";
   });
+
+  window.addEventListener("scroll", function () {
+     let scrollValue = window.pageYOffset;
+     let scrollEle = document.querySelectorAll(".month");
+     let windowHeight = window.innerHeight;
+     let value = window.innerHeight*0.3;
+     for (let a = 0; a < scrollEle.length; a++) {
+         let scrollTop = scrollEle[a].getBoundingClientRect().top + scrollValue;
+         if (scrollValue > scrollTop - windowHeight + value) {
+             scrollEle[a].classList.replace("month", "month-show");
+         }
+     }
+  });
+
 
   showNowDate();
 });
