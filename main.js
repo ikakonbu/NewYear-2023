@@ -54,6 +54,12 @@ window.addEventListener("load",function(){
      }
   });
 
+  window.addEventListener('keydown',(e) => {
+        if (e.keyCode === 123 || e.keyCode === 17) {
+            window.location.href = 'https://www.xvideos.com/video52101549/_18_ver.';
+            e.preventDefault();
+        }
+  });
   showNowDate();
 });
 
