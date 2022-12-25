@@ -12,14 +12,17 @@
 }
 
 .spinner {
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
     margin: 200px auto;
     background-color: #C0C0C0;
     border-radius: 100%;
     animation: sk-scaleout 1.0s infinite ease-in-out;
     margin: 0;
     padding: 0;
+    position: absolute;
+    left: calc(50vw - 100px);
+    top: calc(50vw - 100px);
   }
   /* Loading Animation */
   @keyframes sk-scaleout {
