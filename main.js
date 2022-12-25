@@ -40,6 +40,7 @@ window.addEventListener("load",function(){
     nycard.style.transform =  "scale(min(" + Math.sqrt(Math.sqrt((window.pageYOffset / 2) / (0.42 * window.innerHeight))) + ",1))";
   });
 
+
   window.addEventListener("scroll", function () {
      let scrollValue = window.pageYOffset;
      let scrollEle = document.querySelectorAll(".month");
@@ -52,7 +53,6 @@ window.addEventListener("load",function(){
          }
      }
   });
-
 
   showNowDate();
 });
