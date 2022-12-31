@@ -35,6 +35,7 @@
     var disc = document.querySelector(".description");
     var main = document.querySelector(".main_back");
     var talk = document.querySelector(".news");
+    var nmain = document.querySelector(".news_main");
     sample.insertAdjacentHTML('beforeend', docSnap.data().Number);
     const gift = document.querySelector(".gift");
 
@@ -46,8 +47,8 @@
 
     gift.className += '-show';
     disc.style.display = "none";
-    talk.style.display = "none";
     main.style.display = "block";
+    nmai.style.display = "none";
   } else {
     var sample = document.getElementById('Number');
     sample.insertAdjacentHTML('beforeend', '?????');
